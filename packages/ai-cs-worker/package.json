@@ -1,0 +1,26 @@
+{
+  "name": "@ventora/ai-cs-worker",
+  "version": "1.0.1",
+  "description": "Private Cloudflare Worker runtime for Ventora AI-CS",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "@ventora/ai-cs-contracts": "workspace:*"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.0.0",
+    "@vitest/coverage-v8": "^2.1.8",
+    "jsdom": "^25",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8",
+    "wrangler": "4.59.1"
+  }
+}

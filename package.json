@@ -1,0 +1,68 @@
+{
+  "name": "ventora-platform",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "lint": "biome check --write .",
+    "lint:ci": "biome check .",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "test:coverage": "turbo run test:coverage",
+    "verify": "pnpm run schemas:check && pnpm run metrics:check && pnpm run secrets:check && pnpm run test:scripts && pnpm run lint:ci && pnpm run typecheck && pnpm run test:coverage && pnpm run smoke:ts && pnpm run smoke:py",
+    "schemas:generate": "node scripts/codegen-schemas.mjs",
+    "schemas:check": "node scripts/codegen-schemas.mjs --check && node scripts/check-redaction-rules.mjs",
+    "metrics": "node scripts/repo-metrics.mjs",
+    "metrics:check": "node scripts/repo-metrics.mjs --check",
+    "metrics:charts": "node scripts/repo-metrics.mjs --charts",
+    "secrets:check": "node scripts/check-tracked-secrets.mjs",
+    "ai-secrets:doctor": "node scripts/ai-secrets-doctor.mjs",
+    "ai-secrets:doctor:json": "node scripts/ai-secrets-doctor.mjs --json",
+    "test:scripts": "node --test scripts/run-affected-checks.test.mjs scripts/dev-workers.test.mjs scripts/ai-secrets-manifest.test.mjs scripts/e2e/client-assertion.test.mjs scripts/e2e/mock-servers.test.mjs scripts/e2e/mock-openrouter-sdr.test.mjs scripts/e2e/browser-bff.test.mjs scripts/__tests__/check-tracked-secrets.test.mjs scripts/__tests__/repo-metrics.test.mjs scripts/__tests__/term-svg.test.mjs",
+    "test:e2e": "node --test --test-concurrency=1 scripts/e2e/auth-contract.e2e.mjs scripts/e2e/chat-sse.e2e.mjs scripts/e2e/sdr-chat-sse.e2e.mjs scripts/e2e/handoff-escalation.e2e.mjs",
+    "test:e2e:browser": "node --test --test-concurrency=1 scripts/e2e/browser-widget.e2e.mjs",
+    "test:e2e:browser:sdr": "node --test --test-concurrency=1 scripts/e2e/browser-sdr-widget.e2e.mjs",
+    "test:e2e:bridge": "node --test --test-concurrency=1 scripts/e2e/email-renderer-bridge.e2e.mjs",
+    "check-affected": "node scripts/run-affected-checks.mjs",
+    "check-affected:all": "node scripts/run-affected-checks.mjs --all",
+    "check-affected:head": "node scripts/run-affected-checks.mjs --head",
+    "smoke:ts": "pnpm --filter @ventora/ts-consumer test",
+    "smoke:py": "node scripts/run-python-smoke.mjs",
+    "harness:up": "node scripts/dev-workers.mjs",
+    "harness:check": "node scripts/dev-workers.mjs --check",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm run release:cloudflare",
+    "publish:cloudflare": "node scripts/publish-cloudflare-registry.mjs",
+    "release:cloudflare": "pnpm run verify && pnpm run build && node scripts/publish-cloudflare-registry.mjs",
+    "publish:python": "node scripts/publish-python-registry.mjs",
+    "release:python": "pnpm run verify && pnpm run check-affected:all && node scripts/publish-python-registry.mjs",
+    "prepare": "simple-git-hooks"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,mjs,cjs,json,jsonc}": "biome check --write --no-errors-on-unmatched"
+  },
+  "pnpm": {
+    "overrides": {
+      "undici": "7.24.8"
+    }
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged && node scripts/run-affected-checks.mjs"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@changesets/cli": "^2.27.10",
+    "esbuild": "^0.27.7",
+    "lint-staged": "^15.3.0",
+    "playwright": "^1.60.0",
+    "simple-git-hooks": "^2.11.1",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2"
+  }
+}

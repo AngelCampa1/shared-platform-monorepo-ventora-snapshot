@@ -1,0 +1,22 @@
+{
+  "name": "@ventora/python-registry",
+  "version": "0.1.0",
+  "description": "Private PEP 503/691 Python package index for Ventora packages on Cloudflare Workers",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.0.0",
+    "@vitest/coverage-v8": "^2.1.8",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8",
+    "wrangler": "4.59.1"
+  }
+}

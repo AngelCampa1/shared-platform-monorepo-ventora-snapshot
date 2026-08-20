@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 736 616" width="736" height="616" role="img" aria-label="Source and test lines per package">
+<title>Source and test lines per package</title>
+<style>
+  .bg{fill:#ffffff}
+  .label,.value,.title,.caption{font-family:ui-sans-serif,-apple-system,Segoe UI,Roboto,sans-serif}
+  .title{font-size:15px;font-weight:600;fill:#0f172a}
+  .caption{font-size:11px;fill:#64748b}
+  .label{font-size:11px;fill:#334155}
+  .value{font-size:10px;fill:#64748b}
+  .src{fill:#1e3a8a}
+  .tst{fill:#60a5fa}
+  .bar{fill:#1e3a8a}
+  @media (prefers-color-scheme: dark){
+    .bg{fill:#0b1220}.title{fill:#e2e8f0}.label{fill:#cbd5e1}
+    .caption,.value{fill:#94a3b8}.src{fill:#93c5fd}.tst{fill:#1d4ed8}.bar{fill:#93c5fd}
+  }
+</style>
+  <rect class="bg" width="736" height="616"/>
+  <text class="title" x="16" y="24">Lines of code per package</text>
+  <rect class="src" x="16" y="34" width="10" height="10" rx="2"/><text class="caption" x="31" y="43">source</text>
+  <rect class="tst" x="80" y="34" width="10" height="10" rx="2"/><text class="caption" x="95" y="43">tests</text>
+  <text class="label" x="182" y="73" text-anchor="end">ai-sdr-worker</text><rect class="src" x="190" y="64" width="148.5" height="12" rx="2"/><rect class="tst" x="338.5" y="64" width="321.5" height="12" rx="2"/><text class="value" x="666.0" y="74">19,591</text>
+  <text class="label" x="182" y="93" text-anchor="end">ai-cs-worker</text><rect class="src" x="190" y="84" width="97.6" height="12" rx="2"/><rect class="tst" x="287.6" y="84" width="172.4" height="12" rx="2"/><text class="value" x="466.0" y="94">11,254</text>
+  <text class="label" x="182" y="113" text-anchor="end">ai-cs</text><rect class="src" x="190" y="104" width="78.2" height="12" rx="2"/><rect class="tst" x="268.2" y="104" width="145.8" height="12" rx="2"/><text class="value" x="420.0" y="114">9,339</text>
+  <text class="label" x="182" y="133" text-anchor="end">ai-sdr</text><rect class="src" x="190" y="124" width="33.6" height="12" rx="2"/><rect class="tst" x="223.6" y="124" width="49.8" height="12" rx="2"/><text class="value" x="279.3" y="134">3,473</text>
+  <text class="label" x="182" y="153" text-anchor="end">third-grade-copy-skill</text><rect class="src" x="190" y="144" width="83.3" height="12" rx="2"/><rect class="tst" x="273.3" y="144" width="0.0" height="12" rx="2"/><text class="value" x="279.3" y="154">3,473</text>
+  <text class="label" x="182" y="173" text-anchor="end">seo</text><rect class="src" x="190" y="164" width="21.4" height="12" rx="2"/><rect class="tst" x="211.4" y="164" width="34.8" height="12" rx="2"/><text class="value" x="252.2" y="174">2,341</text>
+  <text class="label" x="182" y="193" text-anchor="end">python-registry</text><rect class="src" x="190" y="184" width="17.7" height="12" rx="2"/><rect class="tst" x="207.7" y="184" width="32.0" height="12" rx="2"/><text class="value" x="245.6" y="194">2,068</text>
+  <text class="label" x="182" y="213" text-anchor="end">storage</text><rect class="src" x="190" y="204" width="17.2" height="12" rx="2"/><rect class="tst" x="207.2" y="204" width="24.2" height="12" rx="2"/><text class="value" x="237.4" y="214">1,725</text>
+  <text class="label" x="182" y="233" text-anchor="end">ventora-observability</text><rect class="src" x="190" y="224" width="14.2" height="12" rx="2"/><rect class="tst" x="204.2" y="224" width="26.3" height="12" rx="2"/><text class="value" x="236.4" y="234">1,686</text>
+  <text class="label" x="182" y="253" text-anchor="end">observability</text><rect class="src" x="190" y="244" width="17.7" height="12" rx="2"/><rect class="tst" x="207.7" y="244" width="19.9" height="12" rx="2"/><text class="value" x="233.6" y="254">1,567</text>
+  <text class="label" x="182" y="273" text-anchor="end">billing</text><rect class="src" x="190" y="264" width="13.8" height="12" rx="2"/><rect class="tst" x="203.8" y="264" width="22.0" height="12" rx="2"/><text class="value" x="231.8" y="274">1,493</text>
+  <text class="label" x="182" y="293" text-anchor="end">api-client</text><rect class="src" x="190" y="284" width="13.4" height="12" rx="2"/><rect class="tst" x="203.4" y="284" width="21.9" height="12" rx="2"/><text class="value" x="231.3" y="294">1,471</text>
+  <text class="label" x="182" y="313" text-anchor="end">auth-better</text><rect class="src" x="190" y="304" width="15.7" height="12" rx="2"/><rect class="tst" x="205.7" y="304" width="19.1" height="12" rx="2"/><text class="value" x="230.8" y="314">1,451</text>
+  <text class="label" x="182" y="333" text-anchor="end">package-registry</text><rect class="src" x="190" y="324" width="16.3" height="12" rx="2"/><rect class="tst" x="206.3" y="324" width="18.5" height="12" rx="2"/><text class="value" x="230.8" y="334">1,451</text>
+  <text class="label" x="182" y="353" text-anchor="end">ventora-llm</text><rect class="src" x="190" y="344" width="10.9" height="12" rx="2"/><rect class="tst" x="200.9" y="344" width="22.5" height="12" rx="2"/><text class="value" x="229.3" y="354">1,390</text>
+  <text class="label" x="182" y="373" text-anchor="end">ventora-billing</text><rect class="src" x="190" y="364" width="10.7" height="12" rx="2"/><rect class="tst" x="200.7" y="364" width="20.1" height="12" rx="2"/><text class="value" x="226.9" y="374">1,286</text>
+  <text class="label" x="182" y="393" text-anchor="end">ventora-storage</text><rect class="src" x="190" y="384" width="11.6" height="12" rx="2"/><rect class="tst" x="201.6" y="384" width="17.6" height="12" rx="2"/><text class="value" x="225.2" y="394">1,218</text>
+  <text class="label" x="182" y="413" text-anchor="end">email-templates</text><rect class="src" x="190" y="404" width="24.1" height="12" rx="2"/><rect class="tst" x="214.1" y="404" width="4.1" height="12" rx="2"/><text class="value" x="224.1" y="414">1,173</text>
+  <text class="label" x="182" y="433" text-anchor="end">ai-sdr-contracts</text><rect class="src" x="190" y="424" width="11.8" height="12" rx="2"/><rect class="tst" x="201.8" y="424" width="15.0" height="12" rx="2"/><text class="value" x="222.8" y="434">1,116</text>
+  <text class="label" x="182" y="453" text-anchor="end">email</text><rect class="src" x="190" y="444" width="10.0" height="12" rx="2"/><rect class="tst" x="200.0" y="444" width="15.7" height="12" rx="2"/><text class="value" x="221.7" y="454">1,070</text>
+  <text class="label" x="182" y="473" text-anchor="end">analytics</text><rect class="src" x="190" y="464" width="11.0" height="12" rx="2"/><rect class="tst" x="201.0" y="464" width="12.8" height="12" rx="2"/><text class="value" x="219.9" y="474">995</text>
+  <text class="label" x="182" y="493" text-anchor="end">ventora-email</text><rect class="src" x="190" y="484" width="9.3" height="12" rx="2"/><rect class="tst" x="199.3" y="484" width="14.2" height="12" rx="2"/><text class="value" x="219.5" y="494">979</text>
+  <text class="label" x="182" y="513" text-anchor="end">ventora-analytics</text><rect class="src" x="190" y="504" width="8.5" height="12" rx="2"/><rect class="tst" x="198.5" y="504" width="11.6" height="12" rx="2"/><text class="value" x="216.2" y="514">841</text>
+  <text class="label" x="182" y="533" text-anchor="end">ai-assistant-contracts</text><rect class="src" x="190" y="524" width="12.5" height="12" rx="2"/><rect class="tst" x="202.5" y="524" width="5.9" height="12" rx="2"/><text class="value" x="214.3" y="534">764</text>
+  <text class="label" x="182" y="553" text-anchor="end">email-renderer</text><rect class="src" x="190" y="544" width="6.7" height="12" rx="2"/><rect class="tst" x="196.7" y="544" width="10.7" height="12" rx="2"/><text class="value" x="213.4" y="554">726</text>
+  <text class="label" x="182" y="573" text-anchor="end">ai-cs-contracts</text><rect class="src" x="190" y="564" width="8.9" height="12" rx="2"/><rect class="tst" x="198.9" y="564" width="2.8" height="12" rx="2"/><text class="value" x="207.7" y="574">489</text>
+  <text class="caption" x="16" y="604">Generated by scripts/repo-metrics.mjs --charts</text>
+</svg>

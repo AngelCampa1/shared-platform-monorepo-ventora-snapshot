@@ -1,0 +1,47 @@
+{
+  "name": "@ventora/auth-better",
+  "version": "1.0.2",
+  "description": "Better Auth factory and helpers for Ventora products",
+  "license": "UNLICENSED",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./factory": {
+      "types": "./dist/factory.d.ts",
+      "import": "./dist/factory.js",
+      "require": "./dist/factory.cjs"
+    },
+    "./helpers": {
+      "types": "./dist/helpers.d.ts",
+      "import": "./dist/helpers.js",
+      "require": "./dist/helpers.cjs"
+    },
+    "./advanced": {
+      "types": "./dist/advanced.d.ts",
+      "import": "./dist/advanced.js",
+      "require": "./dist/advanced.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "peerDependencies": {
+    "better-auth": ">=1.0.0"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.8",
+    "better-auth": "^1.2.5",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

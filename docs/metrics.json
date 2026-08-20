@@ -1,0 +1,862 @@
+{
+  "totals": {
+    "projectFiles": 442,
+    "projectLines": 92119,
+    "lockfileFiles": 4,
+    "lockfileLines": 10151
+  },
+  "languages": [
+    {
+      "language": "TypeScript",
+      "files": 183,
+      "lines": 61562
+    },
+    {
+      "language": "JavaScript",
+      "files": 45,
+      "lines": 12003
+    },
+    {
+      "language": "Python",
+      "files": 60,
+      "lines": 9336
+    },
+    {
+      "language": "Markdown",
+      "files": 73,
+      "lines": 6201
+    },
+    {
+      "language": "JSON",
+      "files": 61,
+      "lines": 2542
+    },
+    {
+      "language": "TOML",
+      "files": 11,
+      "lines": 391
+    },
+    {
+      "language": "Other",
+      "files": 6,
+      "lines": 70
+    },
+    {
+      "language": "YAML",
+      "files": 3,
+      "lines": 14
+    }
+  ],
+  "code": {
+    "typescript": {
+      "sourceLines": 21740,
+      "testLines": 39822,
+      "sourceFiles": 122,
+      "testFiles": 61,
+      "testCases": 2059
+    },
+    "javascript": {
+      "sourceLines": 8041,
+      "testLines": 3962,
+      "sourceFiles": 28,
+      "testFiles": 17,
+      "testCases": 227
+    },
+    "python": {
+      "sourceLines": 4656,
+      "testLines": 4680,
+      "sourceFiles": 36,
+      "testFiles": 24,
+      "testCases": 448
+    }
+  },
+  "packages": {
+    "typescript": [
+      {
+        "name": "@ventora/ai-assistant-contracts",
+        "dir": "packages/ai-assistant-contracts",
+        "version": "0.2.0",
+        "description": "Shared assistant protocol contracts for Ventora AI-SDR and AI-CS runtimes",
+        "private": false,
+        "deployable": false,
+        "exports": [
+          "."
+        ],
+        "runtimeDependencies": [],
+        "internalDependencies": [],
+        "sourceLines": 520,
+        "testLines": 244,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "dist/**",
+            "src/__tests__/**",
+            "tsup.config.ts",
+            "vitest.config.ts"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/ai-cs",
+        "dir": "packages/ai-cs",
+        "version": "1.0.6",
+        "description": "Browser client helpers for Ventora AI customer support",
+        "private": false,
+        "deployable": false,
+        "exports": [
+          ".",
+          "./react"
+        ],
+        "runtimeDependencies": [],
+        "internalDependencies": [
+          "@ventora/ai-cs-contracts"
+        ],
+        "sourceLines": 3260,
+        "testLines": 6079,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "dist/**",
+            "src/__tests__/**",
+            "tsup.config.ts",
+            "vitest.config.ts"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/ai-cs-contracts",
+        "dir": "packages/ai-cs-contracts",
+        "version": "0.4.0",
+        "description": "AI customer support protocol contracts for authenticated Ventora apps",
+        "private": false,
+        "deployable": false,
+        "exports": [
+          "."
+        ],
+        "runtimeDependencies": [],
+        "internalDependencies": [
+          "@ventora/ai-assistant-contracts"
+        ],
+        "sourceLines": 372,
+        "testLines": 117,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "dist/**",
+            "src/__tests__/**",
+            "tsup.config.ts",
+            "vitest.config.ts"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/ai-cs-worker",
+        "dir": "packages/ai-cs-worker",
+        "version": "1.0.1",
+        "description": "Private Cloudflare Worker runtime for Ventora AI-CS",
+        "private": true,
+        "deployable": true,
+        "exports": [],
+        "runtimeDependencies": [],
+        "internalDependencies": [
+          "@ventora/ai-cs-contracts"
+        ],
+        "sourceLines": 4068,
+        "testLines": 7186,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "**/node_modules/**",
+            "**/.wrangler/**",
+            "dist/**",
+            "src/__tests__/**",
+            "vitest.config.ts"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/ai-sdr",
+        "dir": "packages/ai-sdr",
+        "version": "1.0.2",
+        "description": "Browser client and embeddable widget for Ventora AI-SDR",
+        "private": false,
+        "deployable": false,
+        "exports": [
+          "."
+        ],
+        "runtimeDependencies": [],
+        "internalDependencies": [
+          "@ventora/ai-sdr-contracts"
+        ],
+        "sourceLines": 1399,
+        "testLines": 2074,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "dist/**",
+            "src/__tests__/**",
+            "tsup.config.ts",
+            "vitest.config.ts"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/ai-sdr-contracts",
+        "dir": "packages/ai-sdr-contracts",
+        "version": "0.3.0",
+        "description": "Shared AI-SDR protocol contracts for Ventora products",
+        "private": false,
+        "deployable": false,
+        "exports": [
+          "."
+        ],
+        "runtimeDependencies": [],
+        "internalDependencies": [
+          "@ventora/ai-assistant-contracts"
+        ],
+        "sourceLines": 492,
+        "testLines": 624,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "dist/**",
+            "src/__tests__/**",
+            "tsup.config.ts",
+            "vitest.config.ts"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/ai-sdr-worker",
+        "dir": "packages/ai-sdr-worker",
+        "version": "1.0.1",
+        "description": "Private Cloudflare Worker runtime for Ventora AI-SDR",
+        "private": true,
+        "deployable": true,
+        "exports": [],
+        "runtimeDependencies": [],
+        "internalDependencies": [
+          "@ventora/ai-sdr-contracts"
+        ],
+        "sourceLines": 6192,
+        "testLines": 13399,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "**/node_modules/**",
+            "**/.wrangler/**",
+            "dist/**",
+            "src/__tests__/**",
+            "scripts/**",
+            "vitest.config.ts"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/analytics",
+        "dir": "packages/analytics",
+        "version": "1.0.0",
+        "description": "PostHog analytics wrapper with compile-time event taxonomy for Ventora products",
+        "private": false,
+        "deployable": false,
+        "exports": [
+          ".",
+          "./browser",
+          "./events",
+          "./server"
+        ],
+        "runtimeDependencies": [],
+        "internalDependencies": [],
+        "sourceLines": 460,
+        "testLines": 535,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "dist/**",
+            "src/__tests__/**",
+            "src/_generated-events.ts",
+            "src/index.ts",
+            "tsup.config.ts",
+            "vitest.config.ts"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/api-client",
+        "dir": "packages/api-client",
+        "version": "0.2.2",
+        "description": "Fetch-based API client factory with typed errors, retry, and TanStack Query defaults",
+        "private": false,
+        "deployable": false,
+        "exports": [
+          ".",
+          "./query-client"
+        ],
+        "runtimeDependencies": [],
+        "internalDependencies": [
+          "@ventora/observability"
+        ],
+        "sourceLines": 558,
+        "testLines": 913,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "dist/**",
+            "src/__tests__/**",
+            "src/index.ts",
+            "tsup.config.ts",
+            "vitest.config.ts"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/auth-better",
+        "dir": "packages/auth-better",
+        "version": "1.0.2",
+        "description": "Better Auth factory and helpers for Ventora products",
+        "private": false,
+        "deployable": false,
+        "exports": [
+          ".",
+          "./advanced",
+          "./factory",
+          "./helpers"
+        ],
+        "runtimeDependencies": [],
+        "internalDependencies": [],
+        "sourceLines": 654,
+        "testLines": 797,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "dist/**",
+            "src/__tests__/**",
+            "src/index.ts",
+            "src/types.ts",
+            "tsup.config.ts",
+            "vitest.config.ts"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/billing",
+        "dir": "packages/billing",
+        "version": "1.0.0",
+        "description": "Stripe billing abstraction: plans, checkout, webhooks, and trial lifecycle",
+        "private": false,
+        "deployable": false,
+        "exports": [
+          "."
+        ],
+        "runtimeDependencies": [],
+        "internalDependencies": [],
+        "sourceLines": 574,
+        "testLines": 919,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "dist/**",
+            "src/__tests__/**",
+            "src/index.ts",
+            "tsup.config.ts",
+            "vitest.config.ts"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/email",
+        "dir": "packages/email",
+        "version": "0.2.3",
+        "description": "Resend email client with idempotency, unsubscribe tokens, and CAN-SPAM helpers",
+        "private": false,
+        "deployable": false,
+        "exports": [
+          "."
+        ],
+        "runtimeDependencies": [],
+        "internalDependencies": [],
+        "sourceLines": 416,
+        "testLines": 654,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "dist/**",
+            "src/__tests__/**",
+            "src/index.ts",
+            "tsup.config.ts",
+            "vitest.config.ts"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/email-renderer",
+        "dir": "packages/email-renderer",
+        "version": "0.1.2",
+        "description": "Cloudflare Worker: POST /render returns HTML+text for Python clients",
+        "private": true,
+        "deployable": true,
+        "exports": [],
+        "runtimeDependencies": [],
+        "internalDependencies": [
+          "@ventora/email-templates"
+        ],
+        "sourceLines": 280,
+        "testLines": 446,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "dist/**",
+            "src/__tests__/**",
+            "tsup.config.ts",
+            "vitest.config.ts"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/email-templates",
+        "dir": "packages/email-templates",
+        "version": "0.2.1",
+        "description": "React Email templates for all Ventora products",
+        "private": false,
+        "deployable": false,
+        "exports": [
+          "."
+        ],
+        "runtimeDependencies": [
+          "@react-email/components",
+          "@react-email/render",
+          "react"
+        ],
+        "internalDependencies": [],
+        "sourceLines": 1003,
+        "testLines": 170,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "dist/**",
+            "src/__tests__/**",
+            "src/index.ts",
+            "tsup.config.ts",
+            "vitest.config.ts",
+            "src/templates/**"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/observability",
+        "dir": "packages/observability",
+        "version": "0.2.2",
+        "description": "Sentry, correlation IDs, error hierarchy, and PII redaction for Ventora products",
+        "private": false,
+        "deployable": false,
+        "exports": [
+          ".",
+          "./redact-hipaa"
+        ],
+        "runtimeDependencies": [
+          "@sentry/core"
+        ],
+        "internalDependencies": [],
+        "sourceLines": 739,
+        "testLines": 828,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "dist/**",
+            "src/__tests__/**",
+            "src/index.ts",
+            "**/*.config.ts"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/package-registry",
+        "dir": "packages/package-registry",
+        "version": "0.1.0",
+        "description": "Private npm-compatible registry for Ventora packages on Cloudflare Workers",
+        "private": true,
+        "deployable": true,
+        "exports": [],
+        "runtimeDependencies": [],
+        "internalDependencies": [],
+        "sourceLines": 680,
+        "testLines": 771,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "dist/**",
+            "src/__tests__/**",
+            "vitest.config.ts"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/python-registry",
+        "dir": "packages/python-registry",
+        "version": "0.1.0",
+        "description": "Private PEP 503/691 Python package index for Ventora packages on Cloudflare Workers",
+        "private": true,
+        "deployable": true,
+        "exports": [],
+        "runtimeDependencies": [],
+        "internalDependencies": [],
+        "sourceLines": 736,
+        "testLines": 1332,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "dist/**",
+            "src/__tests__/**",
+            "vitest.config.ts"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/seo",
+        "dir": "packages/seo",
+        "version": "0.2.1",
+        "description": "JSON-LD, page metadata, sitemaps, feeds, and IndexNow for Ventora products",
+        "private": false,
+        "deployable": false,
+        "exports": [
+          ".",
+          "./feed",
+          "./indexnow",
+          "./metadata",
+          "./schema",
+          "./sitemap"
+        ],
+        "runtimeDependencies": [],
+        "internalDependencies": [],
+        "sourceLines": 892,
+        "testLines": 1449,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "dist/**",
+            "src/__tests__/**",
+            "src/index.ts",
+            "src/types.ts",
+            "tsup.config.ts",
+            "vitest.config.ts"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/storage",
+        "dir": "packages/storage",
+        "version": "0.2.2",
+        "description": "R2/S3 object storage abstraction with signed URLs and filename sanitization",
+        "private": false,
+        "deployable": false,
+        "exports": [
+          "."
+        ],
+        "runtimeDependencies": [],
+        "internalDependencies": [
+          "@ventora/observability"
+        ],
+        "sourceLines": 716,
+        "testLines": 1009,
+        "coverage": {
+          "thresholds": {
+            "perFile": true,
+            "lines": 95,
+            "functions": 95,
+            "branches": 95,
+            "statements": 95
+          },
+          "exclude": [
+            "dist/**",
+            "src/__tests__/**",
+            "src/index.ts",
+            "src/types.ts",
+            "tsup.config.ts",
+            "vitest.config.ts"
+          ]
+        }
+      },
+      {
+        "name": "@ventora/third-grade-copy-skill",
+        "dir": "packages/third-grade-copy-skill",
+        "version": "0.2.0",
+        "description": "Packaged Codex/Agents/Claude skill for third-grade marketing copy review",
+        "private": false,
+        "deployable": false,
+        "exports": [
+          ".",
+          "./skill"
+        ],
+        "runtimeDependencies": [],
+        "internalDependencies": [],
+        "sourceLines": 3472,
+        "testLines": 1,
+        "coverage": null
+      }
+    ],
+    "python": [
+      {
+        "name": "ventora-analytics",
+        "dir": "py/ventora_analytics",
+        "version": "0.2.0",
+        "description": "PostHog analytics wrapper with approved event taxonomy for Ventora Python services",
+        "failUnder": 95,
+        "sourceLines": 356,
+        "testLines": 485
+      },
+      {
+        "name": "ventora-billing",
+        "dir": "py/ventora_billing",
+        "version": "0.1.3",
+        "description": "Stripe billing abstraction: plans, checkout, webhooks, and trial lifecycle",
+        "failUnder": 95,
+        "sourceLines": 447,
+        "testLines": 839
+      },
+      {
+        "name": "ventora-email",
+        "dir": "py/ventora_email",
+        "version": "0.1.2",
+        "description": "Resend email client with template rendering, unsubscribe tokens, and CAN-SPAM helpers",
+        "failUnder": 95,
+        "sourceLines": 387,
+        "testLines": 592
+      },
+      {
+        "name": "ventora-llm",
+        "dir": "py/ventora_llm",
+        "version": "0.1.2",
+        "description": "OpenRouter multi-pass LLM extraction pipeline for Ventora document processing",
+        "failUnder": 95,
+        "sourceLines": 454,
+        "testLines": 936
+      },
+      {
+        "name": "ventora-observability",
+        "dir": "py/ventora_observability",
+        "version": "0.1.1",
+        "description": "Sentry, structured logging, PII redaction, and error hierarchy for Ventora Python services",
+        "failUnder": 95,
+        "sourceLines": 591,
+        "testLines": 1095
+      },
+      {
+        "name": "ventora-storage",
+        "dir": "py/ventora_storage",
+        "version": "0.1.3",
+        "description": "R2/S3 object storage abstraction for Ventora Python services",
+        "failUnder": 95,
+        "sourceLines": 485,
+        "testLines": 733
+      }
+    ],
+    "counts": {
+      "typescript": 20,
+      "typescriptPublishable": 15,
+      "typescriptDeployable": 5,
+      "python": 6,
+      "zeroRuntimeDependency": 18
+    }
+  },
+  "coverage": {
+    "typescriptConfigs": 19,
+    "perFileEverywhere": true,
+    "thresholds": [
+      95
+    ],
+    "pythonPackages": 6,
+    "pythonFailUnder": [
+      95
+    ],
+    "pythonGatedPackages": 6,
+    "sourceExclusions": [
+      {
+        "name": "@ventora/analytics",
+        "excluded": [
+          "src/_generated-events.ts",
+          "src/index.ts"
+        ]
+      },
+      {
+        "name": "@ventora/api-client",
+        "excluded": [
+          "src/index.ts"
+        ]
+      },
+      {
+        "name": "@ventora/auth-better",
+        "excluded": [
+          "src/index.ts",
+          "src/types.ts"
+        ]
+      },
+      {
+        "name": "@ventora/billing",
+        "excluded": [
+          "src/index.ts"
+        ]
+      },
+      {
+        "name": "@ventora/email",
+        "excluded": [
+          "src/index.ts"
+        ]
+      },
+      {
+        "name": "@ventora/email-templates",
+        "excluded": [
+          "src/index.ts",
+          "src/templates/**"
+        ]
+      },
+      {
+        "name": "@ventora/observability",
+        "excluded": [
+          "**/*.config.ts",
+          "src/index.ts"
+        ]
+      },
+      {
+        "name": "@ventora/seo",
+        "excluded": [
+          "src/index.ts",
+          "src/types.ts"
+        ]
+      },
+      {
+        "name": "@ventora/storage",
+        "excluded": [
+          "src/index.ts",
+          "src/types.ts"
+        ]
+      }
+    ],
+    "noExclusions": [
+      "@ventora/ai-assistant-contracts",
+      "@ventora/ai-cs",
+      "@ventora/ai-cs-contracts",
+      "@ventora/ai-cs-worker",
+      "@ventora/ai-sdr",
+      "@ventora/ai-sdr-contracts",
+      "@ventora/ai-sdr-worker",
+      "@ventora/email-renderer",
+      "@ventora/package-registry",
+      "@ventora/python-registry"
+    ]
+  },
+  "schemas": {
+    "analyticsEvents": 46,
+    "analyticsCategories": 7,
+    "redactionFieldKeys": 35,
+    "redactionPatterns": 7,
+    "redactionHipaa18": 4
+  }
+}

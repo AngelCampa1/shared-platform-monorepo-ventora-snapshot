@@ -1,0 +1,37 @@
+{
+  "name": "@ventora/email",
+  "version": "0.2.3",
+  "description": "Resend email client with idempotency, unsubscribe tokens, and CAN-SPAM helpers",
+  "license": "UNLICENSED",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "peerDependencies": {
+    "resend": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "resend": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.8",
+    "resend": "^4.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

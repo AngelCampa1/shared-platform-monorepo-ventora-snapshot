@@ -1,0 +1,317 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "urn:ventora:schemas:analytics-events",
+  "title": "VentoraAnalyticsEvents",
+  "description": "Canonical event taxonomy for all Ventora products. Source of truth — codegens TS union and Python literal.",
+  "type": "object",
+  "properties": {
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "product", "category"],
+        "properties": {
+          "name": { "type": "string" },
+          "product": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "camaudit",
+                "camaudit-v2",
+                "grantpipe",
+                "lextract",
+                "floriva",
+                "streamvpn",
+                "all"
+              ]
+            }
+          },
+          "category": {
+            "type": "string",
+            "enum": ["auth", "billing", "onboarding", "feature", "error", "marketing", "support"]
+          },
+          "description": { "type": "string" }
+        }
+      }
+    }
+  },
+  "events": [
+    {
+      "name": "user_signed_up",
+      "product": ["all"],
+      "category": "auth",
+      "description": "New user registration completed"
+    },
+    {
+      "name": "user_signed_in",
+      "product": ["all"],
+      "category": "auth",
+      "description": "User authenticated successfully"
+    },
+    {
+      "name": "user_signed_out",
+      "product": ["all"],
+      "category": "auth",
+      "description": "User session ended"
+    },
+    {
+      "name": "user_password_reset_requested",
+      "product": ["all"],
+      "category": "auth",
+      "description": "Password reset email requested"
+    },
+    {
+      "name": "user_password_reset_completed",
+      "product": ["all"],
+      "category": "auth",
+      "description": "Password reset flow completed"
+    },
+    {
+      "name": "user_email_verified",
+      "product": ["all"],
+      "category": "auth",
+      "description": "Email verification confirmed"
+    },
+    {
+      "name": "trial_started",
+      "product": ["all"],
+      "category": "billing",
+      "description": "Free trial period began"
+    },
+    {
+      "name": "trial_converted",
+      "product": ["all"],
+      "category": "billing",
+      "description": "Trial converted to paid subscription"
+    },
+    {
+      "name": "trial_expired",
+      "product": ["all"],
+      "category": "billing",
+      "description": "Trial ended without conversion"
+    },
+    {
+      "name": "subscription_created",
+      "product": ["all"],
+      "category": "billing",
+      "description": "New paid subscription activated"
+    },
+    {
+      "name": "subscription_updated",
+      "product": ["all"],
+      "category": "billing",
+      "description": "Subscription plan or cadence changed"
+    },
+    {
+      "name": "subscription_canceled",
+      "product": ["all"],
+      "category": "billing",
+      "description": "Subscription cancellation initiated"
+    },
+    {
+      "name": "payment_succeeded",
+      "product": ["all"],
+      "category": "billing",
+      "description": "Stripe payment captured"
+    },
+    {
+      "name": "payment_failed",
+      "product": ["all"],
+      "category": "billing",
+      "description": "Stripe payment declined or failed"
+    },
+    {
+      "name": "checkout_started",
+      "product": ["all"],
+      "category": "billing",
+      "description": "User opened checkout session"
+    },
+    {
+      "name": "checkout_completed",
+      "product": ["all"],
+      "category": "billing",
+      "description": "Checkout session completed"
+    },
+    {
+      "name": "onboarding_started",
+      "product": ["all"],
+      "category": "onboarding",
+      "description": "User began onboarding flow"
+    },
+    {
+      "name": "onboarding_step_completed",
+      "product": ["all"],
+      "category": "onboarding",
+      "description": "Onboarding step finished"
+    },
+    {
+      "name": "onboarding_completed",
+      "product": ["all"],
+      "category": "onboarding",
+      "description": "Full onboarding flow completed"
+    },
+    {
+      "name": "invite_sent",
+      "product": ["all"],
+      "category": "feature",
+      "description": "Team member invite dispatched"
+    },
+    {
+      "name": "invite_accepted",
+      "product": ["all"],
+      "category": "feature",
+      "description": "Team member accepted invite"
+    },
+    {
+      "name": "file_uploaded",
+      "product": ["all"],
+      "category": "feature",
+      "description": "File stored to object storage"
+    },
+    {
+      "name": "file_downloaded",
+      "product": ["all"],
+      "category": "feature",
+      "description": "File retrieved from object storage"
+    },
+    {
+      "name": "export_generated",
+      "product": ["all"],
+      "category": "feature",
+      "description": "Report or export job completed"
+    },
+    {
+      "name": "lead_magnet_submitted",
+      "product": ["floriva", "lextract"],
+      "category": "marketing",
+      "description": "Lead magnet email form submitted"
+    },
+    {
+      "name": "lead_magnet_delivered",
+      "product": ["floriva", "lextract"],
+      "category": "marketing",
+      "description": "Lead magnet asset delivered via email"
+    },
+    {
+      "name": "page_viewed",
+      "product": ["all"],
+      "category": "marketing",
+      "description": "Marketing page view (server-side)"
+    },
+    {
+      "name": "feature_flag_evaluated",
+      "product": ["all"],
+      "category": "feature",
+      "description": "Feature flag check recorded"
+    },
+    {
+      "name": "audit_record_created",
+      "product": ["camaudit", "camaudit-v2"],
+      "category": "feature",
+      "description": "Compliance audit record written"
+    },
+    {
+      "name": "report_generated",
+      "product": ["camaudit", "camaudit-v2", "grantpipe"],
+      "category": "feature",
+      "description": "Report generation completed"
+    },
+    {
+      "name": "document_extracted",
+      "product": ["lextract", "camaudit-v2"],
+      "category": "feature",
+      "description": "Document extraction job finished"
+    },
+    {
+      "name": "extraction_job_started",
+      "product": ["lextract", "camaudit-v2"],
+      "category": "feature",
+      "description": "LLM extraction pipeline started"
+    },
+    {
+      "name": "extraction_job_failed",
+      "product": ["lextract", "camaudit-v2"],
+      "category": "error",
+      "description": "LLM extraction pipeline failed"
+    },
+    {
+      "name": "grant_application_created",
+      "product": ["grantpipe"],
+      "category": "feature",
+      "description": "Grant application record created"
+    },
+    {
+      "name": "grant_application_submitted",
+      "product": ["grantpipe"],
+      "category": "feature",
+      "description": "Grant application submitted to funder"
+    },
+    {
+      "name": "vpn_session_started",
+      "product": ["streamvpn"],
+      "category": "feature",
+      "description": "VPN session initiated"
+    },
+    {
+      "name": "vpn_session_ended",
+      "product": ["streamvpn"],
+      "category": "feature",
+      "description": "VPN session terminated"
+    },
+    {
+      "name": "property_inspection_created",
+      "product": ["camaudit", "camaudit-v2"],
+      "category": "feature",
+      "description": "Property inspection record created"
+    },
+    {
+      "name": "lease_parsed",
+      "product": ["lextract"],
+      "category": "feature",
+      "description": "Lease document parsed"
+    },
+    {
+      "name": "support_ticket_opened",
+      "product": ["all"],
+      "category": "support",
+      "description": "Support request submitted"
+    },
+    {
+      "name": "feedback_submitted",
+      "product": ["all"],
+      "category": "support",
+      "description": "User feedback collected"
+    },
+    {
+      "name": "error_boundary_triggered",
+      "product": ["all"],
+      "category": "error",
+      "description": "React error boundary caught an error"
+    },
+    {
+      "name": "api_error_occurred",
+      "product": ["all"],
+      "category": "error",
+      "description": "API returned a 4xx/5xx status"
+    },
+    {
+      "name": "workspace_created",
+      "product": ["grantpipe"],
+      "category": "feature",
+      "description": "Workspace or organization created"
+    },
+    {
+      "name": "member_added",
+      "product": ["all"],
+      "category": "feature",
+      "description": "Team member added to organization"
+    },
+    {
+      "name": "member_removed",
+      "product": ["all"],
+      "category": "feature",
+      "description": "Team member removed from organization"
+    }
+  ]
+}

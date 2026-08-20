@@ -1,0 +1,694 @@
+[
+  {
+    "name": "dense-b2b-hero",
+    "required_terms": [],
+    "copy": "See every deal in one place. Know what needs work. Help your team close faster.",
+    "should_pass": true
+  },
+  {
+    "name": "compliance-term-kept",
+    "required_terms": ["SOC 2"],
+    "copy": "Get ready for SOC 2. We help collect the proof you need for the audit.",
+    "should_pass": true
+  },
+  {
+    "name": "price-kept",
+    "required_terms": ["$49"],
+    "copy": "Start for $49 a month. Get the tools your team needs.",
+    "should_pass": true
+  },
+  {
+    "name": "onboarding-empty-state",
+    "required_terms": [],
+    "copy": "Set up your workspace first. Then we can show tips that fit your work.",
+    "should_pass": true
+  },
+  {
+    "name": "passive-voice-warns",
+    "copy": "Your report is created after you connect Stripe.",
+    "should_pass": true,
+    "expected_messages": ["Possible passive voice found"],
+    "expected_suggestion": "You create your report after you connect Stripe."
+  },
+  {
+    "name": "warning-without-rewrite-has-no-suggestion",
+    "copy": "Save time while your team sees every open deal today.",
+    "should_pass": true,
+    "expected_messages": ["Possible stacked clause found"],
+    "expected_suggestion": ""
+  },
+  {
+    "name": "active-voice-no-passive-warning",
+    "copy": "Create your report after you connect Stripe.",
+    "should_pass": true,
+    "expected_absent_messages": ["Possible passive voice found"]
+  },
+  {
+    "name": "jargon-fails",
+    "required_terms": [],
+    "copy": "Our comprehensive revenue intelligence platform empowers cross-functional teams to optimize pipeline visibility and accelerate strategic decision-making.",
+    "should_pass": false
+  },
+  {
+    "name": "long-suggestion-splits-scope-clause",
+    "copy": "Our comprehensive platform helps teams optimize workflows from signup to launch.",
+    "should_pass": false,
+    "expected_suggestion": "Our complete tool helps teams save time on busy work. Use it from signup to launch."
+  },
+  {
+    "name": "short-jargon-fails",
+    "required_terms": [],
+    "copy": "Optimize workflows.",
+    "should_pass": false,
+    "expected_hints": ["optimize -> make better", "workflow -> work step"],
+    "expected_suggestion": "Save time on busy work."
+  },
+  {
+    "name": "plural-jargon-fails",
+    "required_terms": [],
+    "copy": "Streamline workflows.",
+    "should_pass": false,
+    "expected_suggestion": "Make work faster."
+  },
+  {
+    "name": "reviewed-term-can-pass",
+    "required_terms": [],
+    "allowed_terms": ["workflow"],
+    "copy": "Build each workflow one step at a time.",
+    "should_pass": true
+  },
+  {
+    "name": "childish-fails",
+    "required_terms": [],
+    "copy": "This is super easy. Our app is your big helper.",
+    "should_pass": false
+  },
+  {
+    "name": "vague-claim-fails",
+    "required_terms": [],
+    "copy": "Everything you need to work smarter.",
+    "should_pass": false,
+    "expected_hints": ["List the one or two most useful things", "Say what work gets easier"],
+    "expected_absent_messages": ["Hard words found"]
+  },
+  {
+    "name": "risky-guarantee-fails",
+    "copy": "Get guaranteed results in one day.",
+    "should_pass": false,
+    "expected_messages": ["Risky absolute claims found"],
+    "expected_absent_messages": ["guarantee, guaranteed"]
+  },
+  {
+    "name": "risky-instant-fails",
+    "copy": "Instant setup with no risk.",
+    "should_pass": false,
+    "expected_messages": ["Risky absolute claims found"]
+  },
+  {
+    "name": "reviewed-risky-claim-can-pass",
+    "allowed_terms": ["guaranteed"],
+    "copy": "Your rate is guaranteed for 12 months.",
+    "should_pass": true
+  },
+  {
+    "name": "weak-cta-fails",
+    "required_terms": [],
+    "copy": "More details",
+    "cta": true,
+    "should_pass": false,
+    "expected_hints": ["Start with a verb"],
+    "expected_suggestion": "See more details"
+  },
+  {
+    "name": "generic-learn-more-cta-fails",
+    "copy": "Learn more",
+    "cta": true,
+    "should_pass": false,
+    "expected_messages": ["Generic CTA found"],
+    "expected_suggestion": "See details"
+  },
+  {
+    "name": "generic-read-more-cta-fails",
+    "copy": "Read more",
+    "cta": true,
+    "should_pass": false,
+    "expected_messages": ["Generic CTA found"],
+    "expected_suggestion": "Read the guide"
+  },
+  {
+    "name": "generic-continue-cta-fails",
+    "copy": "Continue",
+    "cta": true,
+    "should_pass": false,
+    "expected_messages": ["Generic CTA found"],
+    "expected_suggestion": "Continue setup"
+  },
+  {
+    "name": "reviewed-generic-cta-can-pass",
+    "allowed_terms": ["learn more"],
+    "copy": "Learn more",
+    "cta": true,
+    "should_pass": true
+  },
+  {
+    "name": "clear-read-cta-passes",
+    "copy": "Read the guide",
+    "cta": true,
+    "should_pass": true
+  },
+  {
+    "name": "clear-continue-cta-passes",
+    "copy": "Continue setup",
+    "cta": true,
+    "should_pass": true
+  },
+  {
+    "name": "clear-cta-passes",
+    "required_terms": [],
+    "copy": "See plans",
+    "cta": true,
+    "should_pass": true
+  },
+  {
+    "name": "missing-required-term-fails",
+    "required_terms": ["HIPAA"],
+    "copy": "Keep patient data safe. Track the proof you need.",
+    "should_pass": false
+  },
+  {
+    "name": "source-price-preserved",
+    "source": "Plans start at $49 per month.",
+    "copy": "Start for $49 a month.",
+    "should_pass": true
+  },
+  {
+    "name": "source-price-starting-at-missing-fails",
+    "source": "Plans start at $49 per month.",
+    "copy": "Plans cost $49 a month.",
+    "should_pass": false,
+    "expected_messages": ["Source qualifiers missing"]
+  },
+  {
+    "name": "source-price-missing-fails",
+    "source": "Plans start at $49 per month.",
+    "copy": "Start today.",
+    "should_pass": false
+  },
+  {
+    "name": "source-euro-money-preserved-as-word",
+    "source": "Plans cost \u20ac99.",
+    "copy": "Plans cost 99 euros.",
+    "should_pass": true
+  },
+  {
+    "name": "source-euro-money-changed-to-dollar-fails",
+    "source": "Plans cost \u20ac99.",
+    "copy": "Plans cost $99.",
+    "should_pass": false,
+    "expected_messages": ["Source money amounts missing or changed", "\u20ac99"]
+  },
+  {
+    "name": "source-annual-billing-preserved-with-yearly",
+    "source": "Plans cost $99. Billed annually.",
+    "copy": "Plans cost $99 on a yearly plan.",
+    "should_pass": true
+  },
+  {
+    "name": "source-annual-billing-missing-fails",
+    "source": "Plans cost $99. Billed annually.",
+    "copy": "Plans cost $99.",
+    "should_pass": false,
+    "expected_messages": ["Source billing cadence missing or changed", "annual billing"]
+  },
+  {
+    "name": "source-monthly-billing-changed-fails",
+    "source": "Choose the monthly plan.",
+    "copy": "Choose the annual plan.",
+    "should_pass": false,
+    "expected_messages": ["Source billing cadence missing or changed", "monthly billing"]
+  },
+  {
+    "name": "source-pound-money-missing-fails",
+    "source": "Plans cost \u00a349.",
+    "copy": "Plans cost 49.",
+    "should_pass": false,
+    "expected_messages": ["Source money amounts missing or changed", "\u00a349"]
+  },
+  {
+    "name": "source-compliance-term-missing-fails",
+    "source": "Get HIPAA-ready forms in 2 days.",
+    "copy": "Get forms ready in 2 days.",
+    "should_pass": false
+  },
+  {
+    "name": "source-date-and-percent-preserved",
+    "source": "Save 30% before June 30.",
+    "copy": "Save 30% before June 30.",
+    "should_pass": true
+  },
+  {
+    "name": "source-event-time-preserved-with-minutes",
+    "source": "Join us at 5 PM ET.",
+    "copy": "Join us at 5:00 PM ET.",
+    "should_pass": true
+  },
+  {
+    "name": "source-event-time-zone-missing-fails",
+    "source": "Join us at 5 PM ET.",
+    "copy": "Join us at 5 PM.",
+    "should_pass": false,
+    "expected_messages": ["Source times missing or changed", "5 PM ET"]
+  },
+  {
+    "name": "source-event-time-ampm-changed-fails",
+    "source": "Join us at 9:30 AM UTC.",
+    "copy": "Join us at 9:30 PM UTC.",
+    "should_pass": false,
+    "expected_messages": ["Source times missing or changed", "9:30 AM UTC"]
+  },
+  {
+    "name": "source-qualified-percent-preserved",
+    "source": "Save up to 30% before June 30.",
+    "copy": "Save up to 30% before June 30.",
+    "should_pass": true
+  },
+  {
+    "name": "source-qualified-percent-missing-fails",
+    "source": "Save up to 30% before June 30.",
+    "copy": "Save 30% before June 30.",
+    "should_pass": false,
+    "expected_messages": ["Source qualifiers missing"]
+  },
+  {
+    "name": "source-less-than-time-preserved-with-under",
+    "source": "Get set up in less than 5 minutes.",
+    "copy": "Get set up in under 5 minutes.",
+    "should_pass": true
+  },
+  {
+    "name": "source-less-than-time-missing-fails",
+    "source": "Get set up in less than 5 minutes.",
+    "copy": "Get set up in 5 minutes.",
+    "should_pass": false,
+    "expected_messages": ["Source qualifiers missing"]
+  },
+  {
+    "name": "source-within-time-missing-fails",
+    "source": "Set up your account within 2 days.",
+    "copy": "Set up your account in 2 days.",
+    "should_pass": false,
+    "expected_messages": ["Source qualifiers missing"]
+  },
+  {
+    "name": "source-or-less-preserved-with-or-fewer",
+    "source": "Get set up in 5 minutes or less.",
+    "copy": "Get set up in 5 minutes or fewer.",
+    "should_pass": true
+  },
+  {
+    "name": "source-or-less-missing-fails",
+    "source": "Get set up in 5 minutes or less.",
+    "copy": "Get set up in 5 minutes.",
+    "should_pass": false,
+    "expected_messages": ["Source qualifiers missing", "5 or less"]
+  },
+  {
+    "name": "source-or-more-missing-fails",
+    "source": "Invite 10 users or more.",
+    "copy": "Invite 10 users.",
+    "should_pass": false,
+    "expected_messages": ["Source qualifiers missing", "10 or more"]
+  },
+  {
+    "name": "source-less-than-symbol-preserved-with-words",
+    "source": "Pay < $50 per month.",
+    "copy": "Pay less than $50 per month.",
+    "should_pass": true
+  },
+  {
+    "name": "source-less-than-symbol-missing-fails",
+    "source": "Pay < $50 per month.",
+    "copy": "Pay $50 per month.",
+    "should_pass": false,
+    "expected_messages": ["Source qualifiers missing", "less than $50"]
+  },
+  {
+    "name": "source-greater-than-symbol-missing-fails",
+    "source": "Works for > 10 users.",
+    "copy": "Works for 10 users.",
+    "should_pass": false,
+    "expected_messages": ["Source qualifiers missing", "more than 10"]
+  },
+  {
+    "name": "source-at-least-symbol-preserved-with-words",
+    "source": "Needs >= 3 seats.",
+    "copy": "Needs at least 3 seats.",
+    "should_pass": true
+  },
+  {
+    "name": "source-at-most-symbol-missing-fails",
+    "source": "Use <= 5 projects.",
+    "copy": "Use 5 projects.",
+    "should_pass": false,
+    "expected_messages": ["Source qualifiers missing", "at most 5"]
+  },
+  {
+    "name": "source-range-preserved-with-between",
+    "source": "Invite 5 to 10 users.",
+    "copy": "Invite between 5 and 10 users.",
+    "should_pass": true
+  },
+  {
+    "name": "source-range-relationship-missing-fails",
+    "source": "Invite 5 to 10 users.",
+    "copy": "Invite 5 users and 10 users.",
+    "should_pass": false,
+    "expected_messages": ["Source ranges missing", "5 to 10 users"]
+  },
+  {
+    "name": "source-percent-range-missing-fails",
+    "source": "Save 10% to 20%.",
+    "copy": "Save 10% and 20%.",
+    "should_pass": false,
+    "expected_messages": ["Source ranges missing", "10% to 20%"]
+  },
+  {
+    "name": "source-star-rating-preserved-as-out-of-five",
+    "source": "Rated 4.9 stars by 1,200 users.",
+    "copy": "Rated 4.9 out of 5 by 1,200 users.",
+    "should_pass": true
+  },
+  {
+    "name": "source-star-rating-missing-fails",
+    "source": "Rated 4.9 stars by 1,200 users.",
+    "copy": "Loved by 1,200 users.",
+    "should_pass": false,
+    "expected_messages": ["Source ratings missing", "4.9 stars"]
+  },
+  {
+    "name": "source-review-count-unit-missing-fails",
+    "source": "Trusted by 1,200 reviews.",
+    "copy": "Trusted by 1,200 users.",
+    "should_pass": false,
+    "expected_messages": ["Source units missing or changed", "1,200 review"]
+  },
+  {
+    "name": "source-email-contact-preserved",
+    "source": "Email sales@example.com for a quote.",
+    "copy": "Email sales@example.com for a quote.",
+    "should_pass": true
+  },
+  {
+    "name": "source-email-contact-missing-fails",
+    "source": "Email sales@example.com for a quote.",
+    "copy": "Email sales for a quote.",
+    "should_pass": false,
+    "expected_messages": ["Source contact details missing", "sales@example.com"]
+  },
+  {
+    "name": "source-phone-contact-format-preserved",
+    "source": "Call (312) 555-0198 today.",
+    "copy": "Call 312-555-0198 today.",
+    "should_pass": true
+  },
+  {
+    "name": "source-phone-contact-changed-fails",
+    "source": "Call (312) 555-0198 today.",
+    "copy": "Call 312-555-0100 today.",
+    "should_pass": false,
+    "expected_messages": ["Source contact details missing", "(312) 555-0198"]
+  },
+  {
+    "name": "source-url-contact-missing-fails",
+    "source": "Visit https://example.com/pricing for plan details.",
+    "copy": "Visit our pricing page for plan details.",
+    "should_pass": false,
+    "expected_messages": ["Source contact details missing", "https://example.com/pricing"]
+  },
+  {
+    "name": "source-promo-code-preserved",
+    "source": "Use code SAVE20 at checkout.",
+    "copy": "Use code SAVE20 at checkout.",
+    "should_pass": true
+  },
+  {
+    "name": "source-promo-code-missing-fails",
+    "source": "Use code SAVE20 at checkout.",
+    "copy": "Use this code at checkout.",
+    "should_pass": false,
+    "expected_messages": ["Source codes missing", "SAVE20"]
+  },
+  {
+    "name": "source-hyphenated-access-code-changed-fails",
+    "source": "Enter access code BETA-2026.",
+    "copy": "Enter access code BETA-2027.",
+    "should_pass": false,
+    "expected_messages": ["Source codes missing", "BETA-2026"]
+  },
+  {
+    "name": "source-code-removal-can-be-allowed",
+    "source": "Use code SAVE20 at checkout.",
+    "allowed_terms": ["SAVE20"],
+    "copy": "Use this code at checkout.",
+    "should_pass": true
+  },
+  {
+    "name": "source-multiplier-preserved-with-words",
+    "source": "Build pages 2x faster.",
+    "copy": "Build pages twice as fast.",
+    "should_pass": true
+  },
+  {
+    "name": "source-multiplier-missing-fails",
+    "source": "Build pages 2x faster.",
+    "copy": "Build pages faster.",
+    "should_pass": false,
+    "expected_messages": ["Source multipliers missing", "2x faster"]
+  },
+  {
+    "name": "source-more-leads-multiplier-missing-fails",
+    "source": "Get 3x more leads.",
+    "copy": "Get more leads.",
+    "should_pass": false,
+    "expected_messages": ["Source multipliers missing", "3x more leads"]
+  },
+  {
+    "name": "source-number-one-rank-preserved",
+    "source": "Rated #1 app for sales teams.",
+    "copy": "Rated No. 1 app for sales teams.",
+    "should_pass": true
+  },
+  {
+    "name": "source-number-one-rank-missing-fails",
+    "source": "Rated #1 app for sales teams.",
+    "copy": "Rated 1 app for sales teams.",
+    "should_pass": false,
+    "expected_messages": ["Source ranks missing", "#1"]
+  },
+  {
+    "name": "source-top-rank-preserved-with-word",
+    "source": "Choose one of our top 3 tools.",
+    "copy": "Choose one of our top three tools.",
+    "should_pass": true
+  },
+  {
+    "name": "source-top-rank-missing-fails",
+    "source": "Choose one of our top 3 tools.",
+    "copy": "Choose 3 tools.",
+    "should_pass": false,
+    "expected_messages": ["Source ranks missing", "top 3"]
+  },
+  {
+    "name": "source-date-limit-missing-fails",
+    "source": "Save 30% before June 30.",
+    "copy": "Save 30% on June 30.",
+    "should_pass": false,
+    "expected_messages": ["Source qualifiers missing"]
+  },
+  {
+    "name": "source-month-date-missing-fails",
+    "source": "Save 30% before June 30.",
+    "copy": "Save 30% soon.",
+    "should_pass": false
+  },
+  {
+    "name": "source-names-preserved",
+    "source": "Connect Ventora CRM with Stripe in 2 minutes.",
+    "copy": "Connect Ventora CRM with Stripe in 2 minutes.",
+    "should_pass": true
+  },
+  {
+    "name": "source-time-unit-abbreviation-preserved",
+    "source": "Connect Ventora CRM with Stripe in 2 minutes.",
+    "copy": "Connect Ventora CRM with Stripe in 2 mins.",
+    "should_pass": true
+  },
+  {
+    "name": "source-time-unit-changed-fails",
+    "source": "Connect Ventora CRM with Stripe in 2 minutes.",
+    "copy": "Connect Ventora CRM with Stripe in 2 days.",
+    "should_pass": false,
+    "expected_messages": ["Source units missing or changed"]
+  },
+  {
+    "name": "source-no-credit-card-preserved",
+    "source": "Start a 14-day trial. No credit card required.",
+    "copy": "Start a 14-day trial without a credit card.",
+    "should_pass": true
+  },
+  {
+    "name": "source-no-credit-card-missing-fails",
+    "source": "Start a 14-day trial. No credit card required.",
+    "copy": "Start a 14-day trial. Credit card required.",
+    "should_pass": false,
+    "expected_messages": ["Source limits missing"]
+  },
+  {
+    "name": "source-free-trial-preserved-with-try-free",
+    "source": "Start a free trial today.",
+    "copy": "Try it for free today.",
+    "should_pass": true
+  },
+  {
+    "name": "source-free-trial-missing-fails",
+    "source": "Start a free trial today.",
+    "copy": "Start a trial today.",
+    "should_pass": false,
+    "expected_messages": ["Source offer terms missing", "free trial"]
+  },
+  {
+    "name": "source-free-plan-missing-fails",
+    "source": "Use the free plan for small teams.",
+    "copy": "Use the plan for small teams.",
+    "should_pass": false,
+    "expected_messages": ["Source offer terms missing", "free plan"]
+  },
+  {
+    "name": "source-free-forever-missing-fails",
+    "source": "The plan is free forever.",
+    "copy": "The plan is free.",
+    "should_pass": false,
+    "expected_messages": ["Source offer terms missing", "free forever"]
+  },
+  {
+    "name": "source-offer-removal-can-be-allowed",
+    "source": "Start a free trial today.",
+    "allowed_terms": ["free trial"],
+    "copy": "Start a trial today.",
+    "should_pass": true
+  },
+  {
+    "name": "source-cancel-anytime-missing-fails",
+    "source": "Start today. Cancel anytime.",
+    "copy": "Start today.",
+    "should_pass": false,
+    "expected_messages": ["Source limits missing"]
+  },
+  {
+    "name": "source-beta-caveat-preserved",
+    "source": "Join the beta today.",
+    "copy": "Join the beta today.",
+    "should_pass": true
+  },
+  {
+    "name": "source-beta-caveat-missing-fails",
+    "source": "Join the beta today.",
+    "copy": "Join today.",
+    "should_pass": false,
+    "expected_messages": ["Source caveats missing", "beta"]
+  },
+  {
+    "name": "source-terms-apply-caveat-missing-fails",
+    "source": "Save 30% today. Terms apply.",
+    "copy": "Save 30% today.",
+    "should_pass": false,
+    "expected_messages": ["Source caveats missing", "terms apply"]
+  },
+  {
+    "name": "source-invite-only-caveat-missing-fails",
+    "source": "Early access is invite-only.",
+    "copy": "Get early access.",
+    "should_pass": false,
+    "expected_messages": ["Source caveats missing", "invite only"]
+  },
+  {
+    "name": "source-caveat-removal-can-be-allowed",
+    "source": "Join the beta today.",
+    "allowed_terms": ["beta"],
+    "copy": "Join today.",
+    "should_pass": true
+  },
+  {
+    "name": "source-names-missing-fails",
+    "source": "Connect Ventora CRM with Stripe in 2 minutes.",
+    "copy": "Connect the app in 2 minutes.",
+    "should_pass": false
+  },
+  {
+    "name": "source-lowercase-provider-preserved",
+    "source": "Connect stripe in 2 minutes.",
+    "copy": "Connect Stripe in 2 minutes.",
+    "should_pass": true
+  },
+  {
+    "name": "source-lowercase-provider-missing-fails",
+    "source": "Connect stripe in 2 minutes.",
+    "copy": "Connect your payment tool in 2 minutes.",
+    "should_pass": false,
+    "expected_messages": ["Source names missing", "Stripe"]
+  },
+  {
+    "name": "source-lowercase-slack-missing-fails",
+    "source": "Send alerts to slack.",
+    "copy": "Send alerts to your team.",
+    "should_pass": false,
+    "expected_messages": ["Source names missing", "Slack"]
+  },
+  {
+    "name": "source-name-removal-can-be-allowed",
+    "source": "Connect Ventora CRM with Stripe in 2 minutes.",
+    "allowed_terms": ["Ventora CRM", "Stripe"],
+    "copy": "Connect the app in 2 minutes.",
+    "should_pass": true
+  },
+  {
+    "name": "hard-word-fails",
+    "copy": "Implementation starts today.",
+    "should_pass": false
+  },
+  {
+    "name": "allowed-hard-word-passes",
+    "allowed_terms": ["implementation"],
+    "copy": "Implementation starts today.",
+    "should_pass": true
+  },
+  {
+    "name": "em-dash-fails",
+    "copy": "Save time\u2014start today.",
+    "should_pass": false,
+    "expected_suggestion": "Save time. Start today."
+  },
+  {
+    "name": "curly-quote-fails",
+    "copy": "\u201cStart today\u201d",
+    "should_pass": false
+  },
+  {
+    "name": "headline-too-long-fails",
+    "copy": "See every deal and know what needs work today",
+    "headline": true,
+    "should_pass": false
+  },
+  {
+    "name": "headline-filler-fails",
+    "copy": "Unlock faster sales",
+    "headline": true,
+    "should_pass": false
+  },
+  {
+    "name": "headline-clear-passes",
+    "copy": "Close deals faster",
+    "headline": true,
+    "should_pass": true
+  }
+]

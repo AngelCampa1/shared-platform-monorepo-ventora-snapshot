@@ -1,0 +1,51 @@
+{
+  "name": "@ventora/observability",
+  "version": "0.2.2",
+  "description": "Sentry, correlation IDs, error hierarchy, and PII redaction for Ventora products",
+  "license": "UNLICENSED",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./redact-hipaa": {
+      "types": "./dist/redact-hipaa.d.ts",
+      "import": "./dist/redact-hipaa.js",
+      "require": "./dist/redact-hipaa.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@sentry/core": ">=8.0.0"
+  },
+  "peerDependencies": {
+    "@sentry/cloudflare": ">=8.0.0",
+    "@sentry/node": ">=8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@sentry/cloudflare": {
+      "optional": true
+    },
+    "@sentry/node": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@sentry/cloudflare": "^8.0.0",
+    "@sentry/core": "^8.0.0",
+    "@sentry/node": "^8.0.0",
+    "@vitest/coverage-v8": "^2.1.8",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

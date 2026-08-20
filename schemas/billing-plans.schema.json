@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "urn:ventora:schemas:billing-plans",
+  "title": "VentoraBillingPlanRegistry",
+  "description": "JSON Schema for @ventora/billing plan registry definitions. Each product provides a conforming config object.",
+  "type": "object",
+  "required": ["product", "plans"],
+  "properties": {
+    "product": {
+      "type": "string",
+      "enum": ["camaudit", "camaudit-v2", "grantpipe", "lextract", "floriva", "streamvpn"]
+    },
+    "plans": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "features", "prices"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "isDefault": { "type": "boolean" },
+          "features": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "limits": {
+            "type": "object",
+            "additionalProperties": { "type": ["number", "string", "null"] }
+          },
+          "prices": {
+            "type": "object",
+            "properties": {
+              "month": { "type": "string", "description": "Stripe price ID for monthly billing" },
+              "year": { "type": "string", "description": "Stripe price ID for annual billing" }
+            },
+            "additionalProperties": false
+          },
+          "trialDays": { "type": "number" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "trialDaysDefault": { "type": "number" },
+    "currency": { "type": "string", "default": "usd" }
+  },
+  "additionalProperties": false
+}

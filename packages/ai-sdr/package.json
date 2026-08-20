@@ -1,0 +1,32 @@
+{
+  "name": "@ventora/ai-sdr",
+  "version": "1.0.2",
+  "description": "Browser client and embeddable widget for Ventora AI-SDR",
+  "license": "UNLICENSED",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@ventora/ai-sdr-contracts": "workspace:*"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.8",
+    "happy-dom": "^20.8.9",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

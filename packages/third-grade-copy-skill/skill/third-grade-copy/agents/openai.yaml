@@ -1,0 +1,4 @@
+interface:
+  display_name: "Third-grade copy"
+  short_description: "Rewrite marketing copy at a third-grade reading level."
+  default_prompt: "Use $third-grade-copy to rewrite this marketing copy, then audit it for hard words and long sentences."

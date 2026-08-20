@@ -1,0 +1,49 @@
+[tool.uv.workspace]
+members = [
+  "ventora_observability",
+  "ventora_analytics",
+  "ventora_email",
+  "ventora_storage",
+  "ventora_billing",
+  "ventora_llm",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "ANN", "S", "B", "A", "C4", "T20"]
+ignore = ["ANN101", "ANN102"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+ignore_missing_imports = false
+
+[[tool.mypy.overrides]]
+module = ["boto3", "botocore", "botocore.config", "botocore.exceptions"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["fastapi", "fastapi.responses", "sentry_sdk"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = [
+  "ventora_observability/tests",
+  "ventora_analytics/tests",
+  "ventora_email/tests",
+  "ventora_storage/tests",
+  "ventora_billing/tests",
+  "ventora_llm/tests",
+]
+asyncio_mode = "auto"
+pythonpath = [
+  "ventora_observability/src",
+  "ventora_analytics/src",
+  "ventora_email/src",
+  "ventora_storage/src",
+  "ventora_billing/src",
+  "ventora_llm/src",
+]

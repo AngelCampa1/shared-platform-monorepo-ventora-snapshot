@@ -1,0 +1,6 @@
+{
+  "description": "Internal customer hub + wall of fame for the Ventora product portfolio.",
+  "scripts": {
+    "dev": "concurrently --kill-others \"vite build --watch\" \"wrangler dev\""
+  }
+}

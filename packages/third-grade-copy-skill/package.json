@@ -1,0 +1,22 @@
+{
+  "name": "@ventora/third-grade-copy-skill",
+  "version": "0.2.0",
+  "description": "Packaged Codex/Agents/Claude skill for third-grade marketing copy review",
+  "license": "UNLICENSED",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./skill": "./skill/third-grade-copy/SKILL.md"
+  },
+  "bin": {
+    "third-grade-copy-skill": "./bin/install.mjs"
+  },
+  "files": ["bin", "index.js", "README.md", "skill", "!skill/**/__pycache__", "!skill/**/*.pyc"],
+  "scripts": {
+    "build": "node --check index.js && node --check bin/install.mjs",
+    "typecheck": "pnpm run build",
+    "test": "python skill/third-grade-copy/scripts/run_evals.py && python skill/third-grade-copy/scripts/run_scan_evals.py",
+    "test:coverage": "pnpm run test",
+    "verify": "pnpm run build && pnpm run test"
+  }
+}

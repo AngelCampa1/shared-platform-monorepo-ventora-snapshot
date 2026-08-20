@@ -1,0 +1,21 @@
+[project]
+name = "ventora-py-consumer"
+version = "0.0.1"
+description = "Python smoke test consumer"
+requires-python = ">=3.12"
+dependencies = [
+  "ventora-observability",
+  "ventora-analytics",
+  "ventora-storage",
+  "ventora-email",
+  "ventora-billing",
+  "ventora-llm",
+]
+
+[tool.uv.sources]
+ventora-observability = { path = "../../py/ventora_observability", editable = true }
+ventora-analytics = { path = "../../py/ventora_analytics", editable = true }
+ventora-storage = { path = "../../py/ventora_storage", editable = true }
+ventora-email = { path = "../../py/ventora_email", editable = true }
+ventora-billing = { path = "../../py/ventora_billing", editable = true }
+ventora-llm = { path = "../../py/ventora_llm", editable = true }

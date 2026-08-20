@@ -1,0 +1,53 @@
+{
+  "name": "@ventora/seo",
+  "version": "0.2.1",
+  "description": "JSON-LD, page metadata, sitemaps, feeds, and IndexNow for Ventora products",
+  "license": "UNLICENSED",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./schema": {
+      "types": "./dist/schema.d.ts",
+      "import": "./dist/schema.js",
+      "require": "./dist/schema.cjs"
+    },
+    "./metadata": {
+      "types": "./dist/metadata.d.ts",
+      "import": "./dist/metadata.js",
+      "require": "./dist/metadata.cjs"
+    },
+    "./sitemap": {
+      "types": "./dist/sitemap.d.ts",
+      "import": "./dist/sitemap.js",
+      "require": "./dist/sitemap.cjs"
+    },
+    "./feed": {
+      "types": "./dist/feed.d.ts",
+      "import": "./dist/feed.js",
+      "require": "./dist/feed.cjs"
+    },
+    "./indexnow": {
+      "types": "./dist/indexnow.d.ts",
+      "import": "./dist/indexnow.js",
+      "require": "./dist/indexnow.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.8",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

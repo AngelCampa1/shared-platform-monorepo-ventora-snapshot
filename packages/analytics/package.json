@@ -1,0 +1,53 @@
+{
+  "name": "@ventora/analytics",
+  "version": "1.0.0",
+  "description": "PostHog analytics wrapper with compile-time event taxonomy for Ventora products",
+  "license": "UNLICENSED",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./browser": {
+      "types": "./dist/browser.d.ts",
+      "import": "./dist/browser.js",
+      "require": "./dist/browser.cjs"
+    },
+    "./server": {
+      "types": "./dist/server.d.ts",
+      "import": "./dist/server.js",
+      "require": "./dist/server.cjs"
+    },
+    "./events": {
+      "types": "./dist/_generated-events.d.ts",
+      "import": "./dist/_generated-events.js",
+      "require": "./dist/_generated-events.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "peerDependencies": {
+    "posthog-js": ">=1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "posthog-js": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.8",
+    "happy-dom": "^20.8.9",
+    "posthog-js": "^1.240.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

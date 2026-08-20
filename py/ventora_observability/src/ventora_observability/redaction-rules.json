@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "urn:ventora:schemas:redaction-rules",
+  "title": "VentoraRedactionRules",
+  "description": "PII and HIPAA-18 redaction rule set loaded by both TS and Python observability runtimes.",
+  "fieldKeys": [
+    "password",
+    "passwd",
+    "secret",
+    "token",
+    "apiKey",
+    "api_key",
+    "accessToken",
+    "access_token",
+    "refreshToken",
+    "refresh_token",
+    "authToken",
+    "auth_token",
+    "authorization",
+    "cookie",
+    "sessionId",
+    "session_id",
+    "creditCard",
+    "credit_card",
+    "cardNumber",
+    "card_number",
+    "cvv",
+    "ssn",
+    "socialSecurityNumber",
+    "social_security_number",
+    "dateOfBirth",
+    "date_of_birth",
+    "dob",
+    "bankAccount",
+    "bank_account",
+    "routingNumber",
+    "routing_number",
+    "privateKey",
+    "private_key",
+    "webhookSecret",
+    "webhook_secret"
+  ],
+  "patterns": [
+    {
+      "name": "email",
+      "pattern": "[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}",
+      "replacement": "[email]"
+    },
+    {
+      "name": "phone_us",
+      "pattern": "(?:\\+1[\\s\\-.]?)?(?:\\(?[0-9]{3}\\)?[\\s\\-.]?)[0-9]{3}[\\s\\-.]?[0-9]{4}",
+      "replacement": "[phone]"
+    },
+    {
+      "name": "ssn",
+      "pattern": "\\b(?!000|666|9\\d{2})\\d{3}[\\s\\-](?!00)\\d{2}[\\s\\-](?!0000)\\d{4}\\b",
+      "replacement": "[ssn]"
+    },
+    {
+      "name": "credit_card",
+      "pattern": "\\b(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|6(?:011|5[0-9]{2})[0-9]{12})\\b",
+      "replacement": "[credit-card]"
+    },
+    {
+      "name": "ipv4",
+      "pattern": "\\b(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b",
+      "replacement": "[ip]"
+    },
+    {
+      "name": "jwt",
+      "pattern": "eyJ[A-Za-z0-9_\\-]{10,}\\.eyJ[A-Za-z0-9_\\-]{10,}\\.[A-Za-z0-9_\\-]{10,}",
+      "replacement": "[jwt]"
+    },
+    {
+      "name": "bearer_token",
+      "pattern": "(?i)bearer\\s+[A-Za-z0-9\\-._~+/]+=*",
+      "replacement": "Bearer [token]"
+    }
+  ],
+  "hipaa18Extensions": [
+    {
+      "name": "mrn",
+      "pattern": "(?i)\\bMRN[:\\s#]*[A-Z0-9\\-]{4,20}\\b",
+      "replacement": "[mrn]"
+    },
+    {
+      "name": "npi",
+      "pattern": "(?i)\\bNPI[:\\s#]*[0-9]{10}\\b",
+      "replacement": "[npi]"
+    },
+    {
+      "name": "dea",
+      "pattern": "(?i)\\bDEA[:\\s#]*[A-Z]{2}[0-9]{7}\\b",
+      "replacement": "[dea]"
+    },
+    {
+      "name": "date_of_service",
+      "pattern": "(?i)\\b(?:DOS|date[_\\s]of[_\\s]service)[:\\s]*\\d{1,2}[/\\-]\\d{1,2}[/\\-]\\d{2,4}\\b",
+      "replacement": "[date-of-service]"
+    }
+  ],
+  "keyPatterns": [
+    {
+      "name": "sensitive_suffix",
+      "pattern": "(?i)(secret|token|password|key|auth|credential)$",
+      "replacement": "[redacted]"
+    }
+  ]
+}

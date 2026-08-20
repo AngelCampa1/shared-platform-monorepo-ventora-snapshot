@@ -1,0 +1,23 @@
+name = "ventora-ai-cs-worker"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ENVIRONMENT = "production"
+AI_CS_SESSION_TTL_SECONDS = "86400"
+AI_CS_ALLOWED_ORIGINS = "https://lextract.app,https://www.lextract.app,https://camaudit.io,https://www.camaudit.io,https://capveri.com,https://www.capveri.com,https://app.capveri.com,https://lextract.io,https://www.lextract.io,https://camaudit.app,https://www.camaudit.app"
+
+[[durable_objects.bindings]]
+name = "AI_CS_SESSIONS"
+class_name = "AiCsSession"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["AiCsSession"]
+
+# Secrets must be set via wrangler secret put:
+# AI_CS_CLIENT_ASSERTION_SECRET
+# AI_CS_CONTEXT_SECRET
+# AI_CS_CONTEXT_ENDPOINTS (JSON map of appId to signed context endpoint)
+# OPENROUTER_API_KEY

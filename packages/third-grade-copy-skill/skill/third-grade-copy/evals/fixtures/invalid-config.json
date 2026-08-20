@@ -1,0 +1,6 @@
+{
+  "allowed_terms": "implementation",
+  "include_docs": "yes",
+  "extensions": ["tsx"],
+  "mystery": true
+}

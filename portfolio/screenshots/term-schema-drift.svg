@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 699 138" width="699" height="138" role="img" aria-label="node scripts/codegen-schemas.mjs --check">
+<title>node scripts/codegen-schemas.mjs --check</title>
+<style>
+  text{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:13px;}
+  .chrome{fill:#0d1117}
+  .bar{fill:#161b22}
+  .dot1{fill:#ff5f57}.dot2{fill:#febc2e}.dot3{fill:#28c840}
+  .prompt{fill:#7ee787}
+  .cmd{fill:#e6edf3;font-weight:600}
+</style>
+  <rect class="chrome" width="699" height="138" rx="8"/>
+  <path class="bar" d="M0 8a8 8 0 0 1 8-8h683a8 8 0 0 1 8 8v22H0z"/>
+  <circle class="dot1" cx="18" cy="16" r="5.5"/>
+  <circle class="dot2" cx="36" cy="16" r="5.5"/>
+  <circle class="dot3" cx="54" cy="16" r="5.5"/>
+  <text x="18" y="65"><tspan class="prompt">$ </tspan><tspan class="cmd">node scripts/codegen-schemas.mjs --check</tspan></text>
+  <text x="18" y="84"><tspan fill="#d1d5db" xml:space="preserve">DRIFT: packages/analytics/src/_generated-events.ts is out of date</tspan></text>
+  <text x="18" y="103"><tspan fill="#d1d5db" xml:space="preserve">DRIFT: py/ventora_analytics/src/ventora_analytics/_generated_events.py is out of date</tspan></text>
+  <text x="18" y="122"><tspan fill="#d1d5db" xml:space="preserve">Run `node scripts/codegen-schemas.mjs` to fix.</tspan></text>
+</svg>

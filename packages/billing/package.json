@@ -1,0 +1,37 @@
+{
+  "name": "@ventora/billing",
+  "version": "1.0.0",
+  "description": "Stripe billing abstraction: plans, checkout, webhooks, and trial lifecycle",
+  "license": "UNLICENSED",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "peerDependencies": {
+    "stripe": ">=16.0.0"
+  },
+  "peerDependenciesMeta": {
+    "stripe": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.8",
+    "stripe": "^17.5.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

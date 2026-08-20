@@ -1,0 +1,9 @@
+name = "ventora-email-renderer"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ENVIRONMENT = "production"
+
+# RENDERER_HMAC_SECRET must be set via: wrangler secret put RENDERER_HMAC_SECRET

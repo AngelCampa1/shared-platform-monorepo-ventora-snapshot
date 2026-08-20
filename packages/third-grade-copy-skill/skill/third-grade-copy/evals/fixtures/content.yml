@@ -1,0 +1,7 @@
+hero:
+  headline: Unlock faster renewals
+  body: Our comprehensive platform helps teams optimize workflows across every account.
+  cta: Start free audit
+  className: text-sm font-bold
+  url: https://example.com/renewals
+  enabled: true

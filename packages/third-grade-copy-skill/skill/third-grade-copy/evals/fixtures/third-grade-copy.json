@@ -1,0 +1,7 @@
+{
+  "copy_keys": ["marketingLine"],
+  "cta_keys": ["actionText"],
+  "headline_keys": ["mainHeadline"],
+  "skip_files": ["skip-me.json"],
+  "allowed_terms": ["implementation"]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "ventora-python-registry",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-05-13",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "limits": {
+    "cpu_ms": 50
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.01
+  },
+  "r2_buckets": [
+    {
+      "binding": "REGISTRY_BUCKET",
+      "bucket_name": "ventora-python-registry"
+    }
+  ],
+  "vars": {
+    "ENVIRONMENT": "production"
+  }
+}

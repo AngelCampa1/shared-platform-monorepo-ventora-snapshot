@@ -1,0 +1,26 @@
+{
+  "name": "@ventora/email-renderer",
+  "version": "0.1.2",
+  "description": "Cloudflare Worker: POST /render returns HTML+text for Python clients",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "@ventora/email-templates": "workspace:*"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.0.0",
+    "@vitest/coverage-v8": "^2.1.8",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8",
+    "wrangler": "4.59.1"
+  }
+}

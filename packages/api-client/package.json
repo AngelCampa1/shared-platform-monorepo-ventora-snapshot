@@ -1,0 +1,45 @@
+{
+  "name": "@ventora/api-client",
+  "version": "0.2.2",
+  "description": "Fetch-based API client factory with typed errors, retry, and TanStack Query defaults",
+  "license": "UNLICENSED",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./query-client": {
+      "types": "./dist/query-client.d.ts",
+      "import": "./dist/query-client.js",
+      "require": "./dist/query-client.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@ventora/observability": "workspace:*"
+  },
+  "peerDependencies": {
+    "@tanstack/react-query": ">=5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@tanstack/react-query": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@tanstack/react-query": "^5.64.2",
+    "@vitest/coverage-v8": "^2.1.8",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
